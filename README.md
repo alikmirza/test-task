@@ -1,0 +1,1 @@
+For starting the application run "run.sh"
