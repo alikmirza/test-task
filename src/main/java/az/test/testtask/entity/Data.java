@@ -2,6 +2,8 @@ package az.test.testtask.entity;
 
 import az.test.testtask.dto.UserDataRequest;
 
+import java.util.Objects;
+
 public class Data {
 
     private Long userId;
@@ -45,5 +47,26 @@ public class Data {
                 .setResult(request.getResult());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Data data = (Data) o;
+        return Objects.equals(userId, data.userId) &&
+                Objects.equals(levelId, data.levelId);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, levelId);
+    }
+
+    @Override
+    public String toString() {
+        return "Data{" +
+                "userId=" + userId +
+                ", levelId=" + levelId +
+                ", result=" + result +
+                '}';
+    }
 }
